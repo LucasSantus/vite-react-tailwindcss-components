@@ -1,12 +1,11 @@
 import { FC } from "react"
-import { NotFound } from "./pages/NotFound"
+import { PathRoutes } from "./routes"
 
 export const App: FC = () => {
 
-  return <>
-    <span>Teste</span>
-    <NotFound />
-  </>
+  return (
+    <PathRoutes />
+  )
 }
 
 export default App
