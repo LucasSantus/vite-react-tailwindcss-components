@@ -1,46 +1,55 @@
 import { FC, useState } from "react"
-import { Trash } from "phosphor-react"
+import { CloudArrowDown, Trash } from "phosphor-react"
 import { Button } from "../Button";
 
 interface IModalProps {
-  text: string
+  textButton: string
+  title: string;
+  description: string;
+  onClickConfirm?: () => void;
 }
 
 export const Modal: FC<IModalProps> = ({
-  text
+  textButton, title, description, onClickConfirm
 }) => {
   const [ active, setActive ] = useState(false);
 
   return (
     <>
       <Button
-        className="btn btn-danger"
-        text={text}
+        variant="btn-primary"
+        description={textButton}
         onClick={() => setActive(!active)}
+        icon={<CloudArrowDown size={22} className="text-light" />}
+        textVariant="text-light"
       />
-    
+
       {active ? (
-        <div 
+        <div
           onClick={() => setActive(!active)}
-          className="absolute top-0 bottom-0 right-0 left-0 z-10 flex justify-center items-center bg-black" 
+          className="absolute top-0 bottom-0 right-0 left-0 z-10 flex justify-center items-center bg-black/50" 
         >
           <div 
             onClick={(event) => event.stopPropagation()}
-            className="w-[500px] h-[400px] bg-white rounded-lg p-5 flex flex-col items-center opacity-100"
+            className="w-[500px] bg-white rounded-lg p-8 flex flex-col items-center justify-center text-center"
           >
-            <Trash size={60} color={"red"} />
-            <span className="text-3xl mt-5">Are you sure?</span>
-            <span className="text-gray-600 mt-2">Do you really want to delete these records? This process cannot be undone.</span>
+            <Trash size={80} color={"red"} />
+            <span className="text-3xl mt-5">{title}</span>
+            <span className="text-gray-600 mt-2">{description}</span>
             <div className="flex justify-center gap-4 p-5">
               <Button
-                text="Cancel"
-                onClick={() => {}}
-                className="btn btn-danger"
+                description="Cancel"
+                onClick={() => setActive(!active)}
+                variant="btn-light"
               />
               <Button
-                text="Delete"
-                onClick={() => {}}
-                className="btn btn-danger"
+                description="Delete"
+                onClick={() => {
+                  if( onClickConfirm ) onClickConfirm()
+                  setActive(!active)
+                }}
+                variant="btn-danger"
+                textVariant="text-light"
               />
             </div>
           </div>
