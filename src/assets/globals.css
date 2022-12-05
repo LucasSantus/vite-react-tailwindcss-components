@@ -7,7 +7,7 @@
     * Styled buttons
     */
   .btn{ 
-    @apply rounded-md px-8 py-2 border flex
+    @apply rounded-md px-6 py-2 border flex items-center justify-center gap-2
   }
   .btn-primary{ 
     @apply bg-blue-600 hover:bg-blue-700 
@@ -32,5 +32,34 @@
   }
   .btn-dark{
     @apply bg-black hover:bg-[0,0,0,0.7]
+  }
+
+  /**
+    * Styled texts
+    */
+
+  .text-primary{ 
+    @apply text-blue-600
+  }
+  .text-secondary{
+    @apply text-gray-600
+  }
+  .text-success{
+    @apply text-green-600
+  }
+  .text-danger{
+    @apply text-red-600
+  }
+  .text-warning{
+    @apply text-yellow-600
+  }
+  .text-info{
+    @apply text-teal-600
+  }
+  .text-light{
+    @apply text-slate-50
+  }
+  .text-dark{
+    @apply text-black
   }
 }
