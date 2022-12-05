@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /**
+    * Styled buttons
+    */
+  .btn{ 
+    @apply rounded-md px-8 py-2 border flex
+  }
+  .btn-primary{ 
+    @apply bg-blue-600 hover:bg-blue-700 
+  }
+  .btn-secondary{
+    @apply bg-gray-600 hover:bg-gray-700 
+  }
+  .btn-success{
+    @apply bg-green-600 hover:bg-green-700 
+  }
+  .btn-danger{
+    @apply bg-red-600 hover:bg-red-700 
+  }
+  .btn-warning{
+    @apply bg-yellow-600 hover:bg-yellow-700 
+  }
+  .btn-info{
+    @apply bg-teal-600 hover:bg-teal-700 
+  }
+  .btn-light{
+    @apply bg-slate-50 hover:bg-slate-300
+  }
+  .btn-dark{
+    @apply bg-black hover:bg-[0,0,0,0.7]
+  }
+}
