@@ -3,10 +3,10 @@ import { FC, useState } from "react";
 import { Modal } from "..";
 import { Button } from "../../Button";
 import { StructureModal } from "../components/StructureModal";
-import { IModalProps } from "../types";
+import { IModalProps } from "../types/types";
 
 export const ModalDelete: FC<IModalProps> = ({
-  textButton, title, description, onClickConfirm
+  textButton, title, description, onClickConfirm, onClickCancel
 }) => {
   const [ active, setActive ] = useState(false);
 
@@ -16,14 +16,17 @@ export const ModalDelete: FC<IModalProps> = ({
       setActive={setActive} 
       textButton={textButton}
     >
-      <Trash size={80} color={"red"} />
+      <Trash size={80} className="text-danger"/>
       <StructureModal
         title={title}
         description={description}
       >
         <Button
           description="Cancel"
-          onClick={() => setActive(!active)}
+          onClick={() => {
+            if( onClickCancel ) onClickCancel()
+            setActive(!active)
+          }}
           variant="btn-light"
         />
         <Button
