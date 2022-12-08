@@ -1,47 +1,40 @@
-import { FC, ReactNode } from "react"
-import { CloudArrowDown } from "phosphor-react"
+import { FC } from "react";
+import { CloudArrowDown } from "phosphor-react";
 import { Button } from "../Button";
+import { IModalMainProps } from "./types/types";
 
-interface IModalProps {
-  children: ReactNode
-  active: boolean
-  setActive: (active: boolean) => void
-  textButton: string
-}
-
-export const Modal: FC<IModalProps> = ({
+export const Modal: FC<IModalMainProps> = ({
   children,
   active,
   setActive,
-  textButton
+  textButton,
 }) => {
-
   const handleIsActivate = () => {
-    setActive(!active)
-  }
-  
+    setActive(!active);
+  };
+
   return (
     <>
       <Button
         variant="btn-primary"
-        description={ textButton }
-        onClick={ handleIsActivate }
+        description={textButton}
+        onClick={handleIsActivate}
         icon={<CloudArrowDown size={22} className="text-light" />}
         textVariant="text-light"
       />
       {active ? (
         <div
           onClick={() => setActive(!active)}
-          className="absolute top-0 bottom-0 right-0 left-0 z-10 flex justify-center items-center bg-black/50" 
+          className="absolute top-0 bottom-0 right-0 left-0 z-80 flex justify-center items-center bg-black/20"
         >
-          <div 
+          <div
             onClick={(event) => event.stopPropagation()}
-            className="w-[500px] bg-white rounded-lg p-8 flex flex-col items-center justify-center text-center"
+            className="w-10/12 sm:w-[500px] h-auto max-h-[600px] bg-white rounded-lg flex flex-col items-center justify-center text-center drop-shadow-xl p-5"
           >
             {children}
           </div>
         </div>
-        ) : null}
+      ) : null}
     </>
-  )
-}
+  );
+};
