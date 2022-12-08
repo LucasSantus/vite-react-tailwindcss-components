@@ -1,10 +1,5 @@
-import { FC, ReactNode } from "react";
-
-interface IStructureModalProps {
-  title: string
-  description: string
-  children: ReactNode
-}
+import { FC } from "react";
+import { IStructureModalProps } from "../../types/types";
 
 export const StructureModal: FC<IStructureModalProps> = ({ 
   title,
