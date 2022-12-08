@@ -3,7 +3,7 @@ import { FC, useState } from "react";
 import { Modal } from "..";
 import { Button } from "../../Button";
 import { StructureModal } from "../components/StructureModal";
-import { IModalProps } from "../types";
+import { IModalProps } from "../types/types";
 
 export const ModalAlert: FC<IModalProps> = ({
   textButton, title, description, onClickConfirm
@@ -16,7 +16,7 @@ export const ModalAlert: FC<IModalProps> = ({
       setActive={setActive} 
       textButton={textButton}
     >
-      <Info size={80} color="teal" />
+      <Info size={80} className="text-info" />
       <StructureModal 
         title={title}
         description={description}
