@@ -1,18 +1,18 @@
 import { FC } from "react";
-import { IButtonProps } from "./types/types";
 
-export const Button: FC<IButtonProps> = (
-  { variant, textVariant, description, icon, onClick}
-) => {
+export const Button: FC<IButtonProps> = ({
+  title,
+  icon,
+  onClick,
+  backgroundColor = "btn-primary",
+  textColor = "text-light",
+}) => {
   return (
     <div className="flex">
-      <button
-        className={ "btn " + variant }
-        onClick={ onClick }
-      >
+      <button className={"btn " + backgroundColor} onClick={onClick}>
         {icon}
-        <span className={"font-medium text-sm " + textVariant}>{ description }</span>
+        <span className={"font-medium text-sm " + textColor}>{title}</span>
       </button>
     </div>
-  )
-}
+  );
+};
