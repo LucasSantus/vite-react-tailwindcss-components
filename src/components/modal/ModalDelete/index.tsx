@@ -3,42 +3,53 @@ import { FC, useState } from "react";
 import { Modal } from "..";
 import { Button } from "../../Button";
 import { StructureModal } from "../components/StructureModal";
-import { IModalProps } from "../types/types";
+import { IMountedModalProps } from "../types/types";
 
-export const ModalDelete: FC<IModalProps> = ({
-  textButton, title, description, onClickConfirm, onClickCancel
+export const ModalDelete: FC<IMountedModalProps> = ({
+  button,
+  buttonConfirmModal,
+  buttonCancelModal,
+  modal,
 }) => {
-  const [ active, setActive ] = useState(false);
+  const [active, setActive] = useState(false);
 
   return (
-    <Modal 
-      active={active} 
-      setActive={setActive} 
-      textButton={textButton}
+    <Modal
+      title={modal.title}
+      description={modal.description}
+      isDisabledOnClickModal={modal.isDisabledOnClickModal}
+      size={modal.size}
+      button={button}
+      active={active}
+      setActive={setActive}
     >
-      <Trash size={80} className="text-danger"/>
-      <StructureModal
-        title={title}
-        description={description}
-      >
-        <Button
-          description="Cancel"
-          onClick={() => {
-            if( onClickCancel ) onClickCancel()
-            setActive(!active)
-          }}
-          variant="btn-light"
-        />
-        <Button
-          description="Delete"
-          onClick={() => {
-            if( onClickConfirm ) onClickConfirm()
-            setActive(!active)
-          }}
-          variant="btn-danger"
-          textVariant="text-light"
-        />
+      <Trash size={80} className="text-danger" />
+      <StructureModal title={modal.title} description={modal.description}>
+        {buttonCancelModal ? (
+          <Button
+            title={buttonCancelModal.title}
+            icon={buttonCancelModal.icon}
+            onClick={() => {
+              if (buttonCancelModal.onClick) buttonCancelModal.onClick();
+              setActive(!active);
+            }}
+            backgroundColor={buttonCancelModal.backgroundColor}
+            textColor={buttonCancelModal.textColor}
+          />
+        ) : null}
+        {buttonConfirmModal ? (
+          <Button
+            title={buttonConfirmModal.title}
+            icon={buttonConfirmModal.icon}
+            onClick={() => {
+              if (buttonConfirmModal.onClick) buttonConfirmModal.onClick();
+              setActive(!active);
+            }}
+            backgroundColor={buttonConfirmModal.backgroundColor}
+            textColor={buttonConfirmModal.textColor}
+          />
+        ) : null}
       </StructureModal>
     </Modal>
-  )
-}
+  );
+};
