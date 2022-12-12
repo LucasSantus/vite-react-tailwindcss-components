@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { Button } from "../Button";
+import { Tooltip } from "../Tooltip";
 import { IModalActiveProps } from "./types/types";
 
 export const Modal: FC<IModalActiveProps> = ({
@@ -9,10 +10,24 @@ export const Modal: FC<IModalActiveProps> = ({
   isDisabledOnClickModal = false,
   size = "sm",
   button,
+  tooltip,
 }) => {
   return (
     <>
-      {button ? (
+      {tooltip ? (
+        <Tooltip message={tooltip!}>
+          <Button
+            title={button.title}
+            icon={button.icon}
+            onClick={() => {
+              if (button.onClick) button.onClick;
+              setActive(!active);
+            }}
+            backgroundColor={button.backgroundColor}
+            textColor={button.textColor}
+          />
+        </Tooltip>
+      ) : (
         <Button
           title={button.title}
           icon={button.icon}
@@ -23,7 +38,7 @@ export const Modal: FC<IModalActiveProps> = ({
           backgroundColor={button.backgroundColor}
           textColor={button.textColor}
         />
-      ) : null}
+      )}
 
       {active ? (
         <div

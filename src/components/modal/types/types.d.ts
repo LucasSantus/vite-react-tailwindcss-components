@@ -11,6 +11,8 @@ interface IDescription {
 interface IModalAttributeProps extends IDescription {
   title: string;
   isDisabledOnClickModal?: boolean;
+  icon?: JSX.Element;
+  tooltip?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
