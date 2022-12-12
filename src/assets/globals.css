@@ -62,4 +62,23 @@
   .text-dark{
     @apply text-black
   }
+
+  /**
+    * Styled modals
+    */
+  .modal-xs{ 
+    @apply sm:w-[500px]
+  }
+  .modal-sm{ 
+    @apply sm:w-[500px]
+  }
+  .modal-md{ 
+    @apply sm:w-[500px]
+  }
+  .modal-lg{ 
+    @apply sm:w-[500px]
+  }
+  .modal-xl{ 
+    @apply sm:w-[500px]
+  }
 }
