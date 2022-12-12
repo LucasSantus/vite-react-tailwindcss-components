@@ -1,11 +1,8 @@
-import { WarningOctagon } from "phosphor-react";
+import { Article, CheckCircle, CodeSimple, Info, Trash, WarningOctagon } from "phosphor-react";
 import { FC, useState } from "react";
 import { Modal } from "../../components/Modal";
-import { ModalAlert } from "../../components/Modal/ModalAlert";
 import { ModalContent } from "../../components/Modal/ModalContent";
-import { ModalDelete } from "../../components/Modal/ModalDelete";
-import { ModalSuccess } from "../../components/Modal/ModalSuccess";
-import { ModalWarning } from "../../components/Modal/ModalWarning";
+import { ModalInformation } from "../../components/Modal/ModalInformation";
 
 export const Dashboard: FC = () => {
   const [active, setActive] = useState(false);
@@ -17,30 +14,17 @@ export const Dashboard: FC = () => {
   return (
     <div className="p-8">
       <div className="flex">
-        {/* <Modal
-          active={active}
-          setActive={setActive}
-          textButton="Open Modal Custom"
-          isDisabledOnClickModal={true}
-          size="large"
-          colorButton="btn-dark"
-        >
-          <span>modal vazio</span>
-        </Modal> */}
-
-        {/* <Tooltip message="Modal de Deleção"> */}
-        
-        {/* </Tooltip> */}
-
-        <ModalDelete
+        <ModalInformation
           modal={{
             title: "Are you sure?",
             description: "Do you really want to delete these records? This process cannot be undone.",
+            icon: <Trash size={80} className="text-danger" />,
             isDisabledOnClickModal: false,
+            tooltip: "Modal de Deleções"
           }}
           button={{
             title: "Delete Modal",
-            icon: <WarningOctagon size={18} className="text-light" />,
+            icon: <Trash size={18} className="text-light" />,
             backgroundColor: "btn-danger",
             textColor: "text-light",
           }}
@@ -52,36 +36,38 @@ export const Dashboard: FC = () => {
           }}
         />
 
-        <ModalAlert
+        <ModalInformation
           modal={{
             title: "Are you sure?",
             description: "Do you really want to delete these records? This process cannot be undone.",
+            icon: <Info size={80} className="text-info" />,
             isDisabledOnClickModal: false,
+            tooltip: "Modal de Informações"
           }}
           button={{
             title: "Alert Modal",
-            icon: <WarningOctagon size={18} className="text-light" />,
+            icon: <Info size={18} className="text-light" />,
             backgroundColor: "btn-primary",
             textColor: "text-light",
           }}
           buttonConfirmModal={{
             title: "Confirmar",
-            icon: <WarningOctagon size={18} className="text-light" />,
             onClick: () => handleOnClickConfirm,
             backgroundColor: "btn-info",
             textColor: "text-light",
           }}
         />
 
-        <ModalSuccess
+        <ModalInformation
           modal={{
             title: "Good job!",
             description: "You clicked the button!",
+            icon: <CheckCircle size={80} className="text-success" />,
             isDisabledOnClickModal: false,
           }}
           button={{
             title: "Success Modal",
-            icon: <WarningOctagon size={18} className="text-light" />,
+            icon: <CheckCircle size={18} className="text-light" />,
             backgroundColor: "btn-success",
             textColor: "text-light",
           }}
@@ -93,10 +79,11 @@ export const Dashboard: FC = () => {
           }}
         />
 
-        <ModalWarning
+        <ModalInformation
           modal={{
             title: "Oops...",
             description: "Something went wrong!",
+            icon: <WarningOctagon size={80} className="text-warning" />,
             isDisabledOnClickModal: false,
           }}
           button={{
@@ -115,15 +102,15 @@ export const Dashboard: FC = () => {
 
         <ModalContent
           button={{
-            title: "Alert Modal",
-            icon: <WarningOctagon size={18} className="text-light" />,
-            backgroundColor: "btn-primary",
+            title: "Content Modal",
+            icon: <Article size={18} className="text-light" />,
+            backgroundColor: "btn-secondary",
             textColor: "text-light",
           }}
           buttonConfirmModal={{
             title: "Confirmar",
             onClick: () => handleOnClickConfirm,
-            backgroundColor: "btn-info",
+            backgroundColor: "btn-secondary",
             textColor: "text-light",
           }}
           modal={{
@@ -137,6 +124,21 @@ export const Dashboard: FC = () => {
           dolorum, animi non quo eligendi veritatis accusamus iusto sunt
           quibusdam voluptas minima odio, fugit fugiat amet itaque accusantium.
         </ModalContent>
+
+        <Modal
+          title="test"
+          description="teste"
+          button={{
+            title: "Simple Modal",
+            icon: <CodeSimple size={18} className="text-light" />,
+            backgroundColor: "btn-dark",
+            textColor: "text-light",
+          }}
+          active={active}
+          setActive={setActive}
+        >
+          modal vazio
+        </Modal>
       </div>
     </div>
   );
