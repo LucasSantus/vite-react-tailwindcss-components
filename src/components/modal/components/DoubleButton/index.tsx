@@ -1,32 +1,39 @@
 import { FC } from "react"
 import { Button } from "../../../Button"
-import { IModalActiveProps } from "../../types/types"
+import { IDoubleButtonProps } from "../../types/types"
 
-export const DoubleButton: FC<IModalActiveProps> = ({
-  onClickCancel,
-  onClickConfirm,
+export const DoubleButton: FC<IDoubleButtonProps> = ({
+  buttonConfirmModal,
+  buttonCancelModal,
   setActive,
   active
 }) => {
   return (
     <>
-      <Button
-        description="Cancel"
-        onClick={() => {
-          if( onClickCancel ) onClickCancel()
-          setActive(!active)
-        }}
-        variant="btn-light"
-      />
-      <Button
-        description="Save"
-        onClick={() => {
-          if( onClickConfirm ) onClickConfirm()
-          setActive(!active)
-        }}
-        variant="btn-danger"
-        textVariant="text-light"
-      />
+      {buttonConfirmModal ? (
+          <Button
+            title={buttonConfirmModal.title}
+            icon={buttonConfirmModal.icon}
+            onClick={() => {
+              if (buttonConfirmModal.onClick) buttonConfirmModal.onClick();
+              setActive(!active);
+            }}
+            backgroundColor={buttonConfirmModal.backgroundColor}
+            textColor={buttonConfirmModal.textColor}
+          />
+        ) : null}
+        {buttonCancelModal ? (
+          <Button
+            title={buttonCancelModal.title}
+            icon={buttonCancelModal.icon}
+            onClick={() => {
+              if (buttonCancelModal.onClick) buttonCancelModal.onClick();
+              setActive(!active);
+            }}
+            backgroundColor={buttonCancelModal.backgroundColor}
+            textColor={buttonCancelModal.textColor}
+          />
+        ) : null}
     </>
   )
 }

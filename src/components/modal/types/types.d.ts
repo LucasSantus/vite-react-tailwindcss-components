@@ -1,8 +1,17 @@
 import { PropsWithChildren } from "react";
 
-interface IOnClickModalProps {
-  onClickConfirm?: () => void;
-  onClickCancel?: () => void;
+/**
+ * Generic Interfaces
+ */
+
+interface IDescription {
+  description: string;
+}
+
+interface IModalAttributeProps extends IDescription {
+  title: string;
+  isDisabledOnClickModal?: boolean;
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
 }
 
 interface IActiveProps {
@@ -10,38 +19,53 @@ interface IActiveProps {
   active: boolean;
 }
 
-interface ITitleProps {
-  title: string;
+interface IMainButtonProps {
+  button: IButtonProps;
 }
 
-interface ITextButtonProps {
-  textButton: string;
+interface IButtonModalProps {
+  buttonConfirmModal: IButtonProps;
+  buttonCancelModal?: IButtonProps;
 }
 
-interface IDescriptionProps {
-  description: string;
-}
+/**
+ * Generic Types
+ */
+interface IModalTypeProps extends IModalAttributeProps, IDescription {}
 
-export interface IModalProps
-  extends IDescriptionProps,
-    IOnClickModalProps,
-    ITitleProps,
-    ITextButtonProps {}
+interface IModalContentTypeProps extends IModalAttributeProps {}
 
-export interface IModalActiveProps extends IOnClickModalProps, IActiveProps {}
-
-export interface ISimpleModal extends PropsWithChildren {}
-
-export interface IModalHeaderProps extends ITitleProps {}
-
-export interface IModalContentProps extends IModalProps, PropsWithChildren {}
-
-export interface IModalMainProps
-  extends ITextButtonProps,
+/**
+ * Modal
+ */
+export interface IModalActiveProps
+  extends IModalTypeProps,
     IActiveProps,
-    PropsWithChildren {}
+    PropsWithChildren, 
+    IMainButtonProps {}
 
-export interface IStructureModalProps
-  extends ITitleProps,
-    IDescriptionProps,
-    PropsWithChildren {}
+/**
+ * Modal Header
+ */
+ export interface IModalHeaderProps {
+  title: string
+}
+
+/**
+ * Modal Alert
+ */
+export interface IMountedModalProps extends IButtonModalProps, IMainButtonProps {
+  modal: IModalTypeProps;
+}
+
+/**
+ * Modal Content
+ */
+export interface IModalContentProps extends IButtonModalProps, IMainButtonProps, PropsWithChildren {
+  modal: IModalContentTypeProps
+}
+
+/**
+ * Double Button
+ */
+export interface IDoubleButtonProps extends IActiveProps, IButtonModalProps {}

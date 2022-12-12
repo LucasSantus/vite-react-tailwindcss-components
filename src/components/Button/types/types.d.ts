@@ -1,5 +1,9 @@
-export interface IButtonProps {
-  variant:
+interface IButtonProps {
+  title: string;
+  icon?: JSX.Element;
+  onClick?: () => void;
+
+  backgroundColor?:
     | "btn-primary"
     | "btn-secondary"
     | "btn-success"
@@ -8,7 +12,8 @@ export interface IButtonProps {
     | "btn-info"
     | "btn-light"
     | "btn-dark";
-  textVariant?:
+
+  textColor?:
     | "text-primary"
     | "text-secondary"
     | "text-success"
@@ -17,7 +22,4 @@ export interface IButtonProps {
     | "text-info"
     | "text-light"
     | "text-dark";
-  description: string;
-  icon?: JSX.Element;
-  onClick?: () => void;
 }
