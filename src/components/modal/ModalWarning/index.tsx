@@ -3,37 +3,40 @@ import { FC, useState } from "react";
 import { Modal } from "..";
 import { Button } from "../../Button";
 import { StructureModal } from "../components/StructureModal";
-import { IModalProps } from "../types/types";
+import { IMountedModalProps } from "../types/types";
 
-export const ModalWarning: FC<IModalProps> = ({
-  textButton, title, description, onClickConfirm
+export const ModalWarning: FC<IMountedModalProps> = ({
+  button,
+  buttonConfirmModal,
+  modal,
 }) => {
-  const [ active, setActive ] = useState(false);
+  const [active, setActive] = useState(false);
 
   return (
-    <Modal 
-      active={active} 
-      setActive={setActive} 
-      textButton={textButton}
+    <Modal
+      title={modal.title}
+      description={modal.description}
+      isDisabledOnClickModal={modal.isDisabledOnClickModal}
+      size={modal.size}
+      button={button}
+      active={active}
+      setActive={setActive}
     >
       <WarningCircle size={80} className="text-warning" />
-      <StructureModal
-        title={title}
-        description={description}
-      >
-        <Button
-          description="Confirm"
-          onClick={() => {
-              if( onClickConfirm ) onClickConfirm()
-              setActive(!active)
-          }}
-          variant="btn-warning"
-          textVariant="text-light"
+      <StructureModal title={modal.title} description={modal.description}>
+        {buttonConfirmModal ? (
+          <Button
+            title={buttonConfirmModal.title}
+            icon={buttonConfirmModal.icon}
+            onClick={() => {
+              if (buttonConfirmModal.onClick) buttonConfirmModal.onClick();
+              setActive(!active);
+            }}
+            backgroundColor={buttonConfirmModal.backgroundColor}
+            textColor={buttonConfirmModal.textColor}
           />
+        ) : null}
       </StructureModal>
-      <div className="border-t border-t-slate-300">
-
-      </div>
     </Modal>
-  )
-}
+  );
+};
