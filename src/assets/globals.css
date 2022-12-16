@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /**
+    * Styled buttons
+    */
+  .btn{ 
+    @apply rounded-md px-6 py-2 border flex items-center justify-center gap-2 border-none hover:opacity-60
+  }
+  .btn-primary{ 
+    @apply bg-blue-600 
+  }
+  .btn-secondary{
+    @apply bg-gray-600 
+  }
+  .btn-success{
+    @apply bg-green-600  
+  }
+  .btn-danger{
+    @apply bg-red-600 
+  }
+  .btn-warning{
+    @apply bg-yellow-600 
+  }
+  .btn-info{
+    @apply bg-teal-600
+  }
+  .btn-light{
+    @apply bg-slate-50 
+  }
+  .btn-dark{
+    @apply bg-black
+  }
+
+  /**
+    * Styled texts
+    */
+
+  .text-primary{ 
+    @apply text-blue-600
+  }
+  .text-secondary{
+    @apply text-gray-600
+  }
+  .text-success{
+    @apply text-green-600
+  }
+  .text-danger{
+    @apply text-red-600
+  }
+  .text-warning{
+    @apply text-yellow-600
+  }
+  .text-info{
+    @apply text-teal-600
+  }
+  .text-light{
+    @apply text-slate-50
+  }
+  .text-dark{
+    @apply text-black
+  }
+
+  /**
+    * Styled modals
+    */
+  .modal-xs{ 
+    @apply sm:w-[500px]
+  }
+  .modal-sm{ 
+    @apply sm:w-[500px]
+  }
+  .modal-md{ 
+    @apply sm:w-[500px]
+  }
+  .modal-lg{ 
+    @apply sm:w-[500px]
+  }
+  .modal-xl{ 
+    @apply sm:w-[500px]
+  }
+}
