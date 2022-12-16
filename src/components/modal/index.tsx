@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { Button } from "../Button";
-import { Tooltip } from "../Tooltip";
 import { IModalActiveProps } from "./types/types";
 
 export const Modal: FC<IModalActiveProps> = ({
@@ -10,42 +9,25 @@ export const Modal: FC<IModalActiveProps> = ({
   isDisabledOnClickModal = false,
   size = "sm",
   button,
-  tooltip,
 }) => {
   return (
     <>
-      {tooltip ? (
-        <Tooltip message={tooltip!}>
-          <Button
-            title={button.title}
-            icon={button.icon}
-            onClick={() => {
-              if (button.onClick) button.onClick;
-              setActive(!active);
-            }}
-            backgroundColor={button.backgroundColor}
-            textColor={button.textColor}
-          />
-        </Tooltip>
-      ) : (
-        <Button
-          title={button.title}
-          icon={button.icon}
-          onClick={() => {
-            if (button.onClick) button.onClick;
-            setActive(!active);
-          }}
-          backgroundColor={button.backgroundColor}
-          textColor={button.textColor}
-        />
-      )}
-
+      <Button
+        title={button.title}
+        icon={button.icon}
+        onClick={() => {
+          if (button.onClick) button.onClick;
+          setActive(!active);
+        }}
+        backgroundColor={button.backgroundColor}
+        textColor={button.textColor}
+      />
       {active ? (
         <div
           onClick={() => {
             if (!isDisabledOnClickModal) setActive(!active);
           }}
-          className="absolute top-0 bottom-0 right-0 left-0 z-80 flex justify-center items-center bg-black/20"
+          className="absolute top-0 bottom-0 right-0 left-0 z-90 flex justify-center items-center bg-black/20"
         >
           <div
             onClick={(event) => event.stopPropagation()}
