@@ -7,31 +7,31 @@
     * Styled buttons
     */
   .btn{ 
-    @apply rounded-md px-6 py-2 border flex items-center justify-center gap-2
+    @apply rounded-md px-6 py-2 border flex items-center justify-center gap-2 border-none hover:opacity-60
   }
   .btn-primary{ 
-    @apply bg-blue-600 hover:bg-blue-700 
+    @apply bg-blue-600 
   }
   .btn-secondary{
-    @apply bg-gray-600 hover:bg-gray-700 
+    @apply bg-gray-600 
   }
   .btn-success{
-    @apply bg-green-600 hover:bg-green-700 
+    @apply bg-green-600  
   }
   .btn-danger{
-    @apply bg-red-600 hover:bg-red-700 
+    @apply bg-red-600 
   }
   .btn-warning{
-    @apply bg-yellow-600 hover:bg-yellow-700 
+    @apply bg-yellow-600 
   }
   .btn-info{
-    @apply bg-teal-600 hover:bg-teal-700 
+    @apply bg-teal-600
   }
   .btn-light{
-    @apply bg-slate-50 hover:bg-slate-300
+    @apply bg-slate-50 
   }
   .btn-dark{
-    @apply bg-black hover:bg-[0,0,0,0.7]
+    @apply bg-black
   }
 
   /**
