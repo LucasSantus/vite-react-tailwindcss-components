@@ -1,8 +1,17 @@
-import { Article, CheckCircle, CodeSimple, Info, Trash, WarningOctagon } from "phosphor-react";
+import {
+  Article,
+  CheckCircle,
+  CodeSimple,
+  Info,
+  Trash,
+  WarningOctagon,
+} from "phosphor-react";
 import { FC, useState } from "react";
 import { Modal } from "../../components/Modal";
 import { ModalContent } from "../../components/Modal/ModalContent";
 import { ModalInformation } from "../../components/Modal/ModalInformation";
+import { Table } from "../../components/Table";
+import { datas } from "../../mocks/datas";
 
 export const Dashboard: FC = () => {
   const [active, setActive] = useState(false);
@@ -12,11 +21,12 @@ export const Dashboard: FC = () => {
   };
 
   return (
-    <div className="w-screen flex flex-col justify-center items-center bg-slate-100 dark:bg-slate-800 p-6 gap-4 h-screen">
+    <div className="w-screen h-screen flex flex-col bg-slate-100 dark:bg-slate-800">
       <ModalInformation
         modal={{
           title: "Are you sure?",
-          description: "Do you really want to delete these records? This process cannot be undone.",
+          description:
+            "Do you really want to delete these records? This process cannot be undone.",
           icon: <Trash size={80} className="text-danger" />,
           isDisabledOnClickModal: false,
         }}
@@ -37,7 +47,8 @@ export const Dashboard: FC = () => {
       <ModalInformation
         modal={{
           title: "Are you sure?",
-          description: "Do you really want to delete these records? This process cannot be undone.",
+          description:
+            "Do you really want to delete these records? This process cannot be undone.",
           icon: <Info size={80} className="text-info" />,
           isDisabledOnClickModal: false,
         }}
@@ -112,14 +123,15 @@ export const Dashboard: FC = () => {
         }}
         modal={{
           title: "Are you sure?",
-          description: "Do you really want to delete these records? This process cannot be undone.",
-          size: "sm"
+          description:
+            "Do you really want to delete these records? This process cannot be undone.",
+          size: "sm",
         }}
       >
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga
         recusandae expedita in illo delectus, qui vitae sed quas aliquid
-        dolorum, animi non quo eligendi veritatis accusamus iusto sunt
-        quibusdam voluptas minima odio, fugit fugiat amet itaque accusantium.
+        dolorum, animi non quo eligendi veritatis accusamus iusto sunt quibusdam
+        voluptas minima odio, fugit fugiat amet itaque accusantium.
       </ModalContent>
 
       <Modal
@@ -136,6 +148,10 @@ export const Dashboard: FC = () => {
       >
         modal vazio
       </Modal>
+
+      <div className="container mx-auto p-6">
+        <Table values={datas.slice(0, 10)} />
+      </div>
     </div>
   );
 };
