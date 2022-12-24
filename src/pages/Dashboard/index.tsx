@@ -7,9 +7,8 @@ import {
   WarningOctagon,
 } from "phosphor-react";
 import { FC, useState } from "react";
-import { Modal } from "../../components/Modal";
-import { ModalContent } from "../../components/Modal/ModalContent";
-import { ModalInformation } from "../../components/Modal/ModalInformation";
+import { ModalContent } from "../../components/modal/ModalContent";
+import { ModalInformation } from "../../components/modal/ModalInformation";
 import { Table } from "../../components/Table";
 import { datas } from "../../mocks/datas";
 
@@ -21,7 +20,7 @@ export const Dashboard: FC = () => {
   };
 
   return (
-    <div className="w-screen h-screen flex flex-col bg-slate-100 dark:bg-slate-800">
+    <div>
       <ModalInformation
         modal={{
           title: "Are you sure?",
@@ -134,7 +133,7 @@ export const Dashboard: FC = () => {
         voluptas minima odio, fugit fugiat amet itaque accusantium.
       </ModalContent>
 
-      <Modal
+      {/* <Modal
         title="test"
         description="teste"
         button={{
@@ -147,7 +146,7 @@ export const Dashboard: FC = () => {
         setActive={setActive}
       >
         modal vazio
-      </Modal>
+      </Modal> */}
 
       <div className="container mx-auto p-6">
         <Table values={datas.slice(0, 10)} />
