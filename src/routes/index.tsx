@@ -7,8 +7,9 @@ export const PathRoutes: FC = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        {routes.map(({ id, path, element }) => (
+        {routes.map(({ id, path, element, subItem }) => (
           <Route key={id} path={path} element={element} />
+          // {subItem?.map((item: any) => <></>)}
         ))}
       </Route>
     </Routes>
