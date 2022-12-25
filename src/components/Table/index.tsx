@@ -21,7 +21,7 @@ export const Table: FC<ITableProps> = ({ values }) => {
       : values;
 
   return (
-    <div className="overflow-x-auto rounded-md">
+    <div className="overflow-x-auto rounded-md w-full">
       <div className="pb-4 bg-white dark:bg-gray-900">
         <div className="relative mt-1">
           <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">

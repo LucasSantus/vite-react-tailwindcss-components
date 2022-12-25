@@ -7,13 +7,13 @@ export const Sidebar: FC = () => {
   const navigate = useNavigate();
 
   return (
-    <aside className="w-64 bg-gray-50 dark:bg-gray-800 h-screen">
+    <aside className="w-auto sm:w-64 bg-gray-50 dark:bg-gray-800 h-screen hidden xs:block">
       <div className="overflow-y-auto py-4 px-3">
         <ul className="space-y-2">
           {routes.map(({ id, title, notification, icon, subItem, path }) => {
             return (
               <li key={id}>
-                {title && path && icon && (
+                {title && icon && (
                   <Item
                     title={title}
                     icon={icon}

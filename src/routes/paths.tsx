@@ -1,8 +1,10 @@
 import { Aperture, ArrowCircleDown } from "phosphor-react";
 import { ReactNode } from "react";
+import { PageBreadcrumb } from "../pages/Breadcrumb";
 import { Dashboard } from "../pages/Dashboard";
 import { PageModal } from "../pages/Modal";
 import { NotFound } from "../pages/NotFound";
+import { PageTable } from "../pages/Table";
 
 interface IRoutesType {
   id: number;
@@ -29,9 +31,23 @@ export const routes: IRoutesType[] = [
   },
   {
     id: 3,
-    title: "Modal",
+    title: "Modals",
     icon: <ArrowCircleDown size={20} />,
     path: "/modal",
     element: <PageModal />,
+  },
+  {
+    id: 4,
+    title: "Tables",
+    icon: <ArrowCircleDown size={20} />,
+    path: "/table",
+    element: <PageTable />,
+  },
+  {
+    id: 5,
+    title: "Breadcrumbs",
+    icon: <ArrowCircleDown size={20} />,
+    path: "/breadcrumbs",
+    element: <PageBreadcrumb />,
   },
 ];
