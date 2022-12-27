@@ -2,54 +2,53 @@
 
 <!--
 <h6 align="center"> 
-	Se você quiser visualizar o sistema, clique <a href="">aqui</a>.
+	If you want to view the system, click <a href="">here</a>.
 </h6>
 -->
 
-<h3 id="sobre">:information_source: Sobre</h3>
+<h3 id="sobre">:information_source: About</h3>
 
-> Este projeto foi desenvolvido utilizando o React, TypeScript, TailwindCSS e Vite no front-end. 
+> This project was developed using React, TypeScript, TailwindCSS and Vite.
 
-A ideia é:
-
-_"Criar um projeto tendo como base a utilização e implementação de diversos modelos de componentes. Tendo como objetivo a construção do frontend da aplicação com intuito de promover o aprendizado na área relacionado ao Vite, React, TypeScript e TailwindCSS."_
-
---------------------------------------------------------------------------------------
-
-<h3 id="tabela-de-conteudo">:ab: Tabela de Conteúdo</h3>
-
-* [Sobre](#sobre)
-* [Tabela de Conteudo](#tabela-de-conteudo)
-* [Status do Projeto](#status)
-* [Por Que](#por-que)
-* [Tecnologias](#tecnologias)
-* [Instalação do Projeto](#instalando)
-* [Autor](#autor)
-* [Licença](#license)
+The idea is:
+_"Create a project based on the use and implementation of several component models. Aiming to build the frontend of the application in order to promote learning in the area related to Vite, React, TypeScript and TailwindCSS."_
 
 --------------------------------------------------------------------------------------
 
-<h3 id="status">:heavy_exclamation_mark: Status do Projeto</h3>
+<h3 id="tabela-de-conteudo">:ab: Contents</h3>
+
+* [About](#sobre)
+* [Contents](#tabela-de-conteudo)
+* [Status](#status)
+* [Why](#por-que)
+* [Technologies](#tecnologias)
+* [Project Installation](#instalando)
+* [Author](#autor)
+* [License](#license)
+
+--------------------------------------------------------------------------------------
+
+<h3 id="status">:heavy_exclamation_mark: Status</h3>
 
 <h4 align="center">
- :construction: Projeto em andamento... :construction:
+ :construction: Project in progress... :construction:
 </h4>
 
 --------------------------------------------------------------------------------------
 
-<h3 id="por-que">:question: Por Que</h3>
+<h3 id="por-que">:question: Why</h3>
 
-Este projeto faz parte do meu portfólio pessoal, ficarei feliz caso você forneça algum feedback, código, estrutura, funcionalidade ou qualquer funcionalidade&melhoria que você possa relatar para melhora-lo.
+This project is part of my personal portfolio, I will be happy if you provide some feedback, code, structure, functionality or any feature&improvement you can report to improve it.
 
-Você pode usar este projeto como quiser, seja para estudar, fazer melhorias, você que manda!
+You can use this project however you want, whether it's for studying, making improvements, you call the shots!
 
-Este é um projeto totalmente grátis!
+This is a totally free project!
 
 --------------------------------------------------------------------------------------
 
-<h3 id="tecnologias">:rocket: Tecnologias</h3>
+<h3 id="tecnologias">:rocket: Tecnologies</h3>
 
-As seguintes ferramentas foram usadas na construção do projeto:
+Used tools:
 
 - [React v18.2.0](https://pt-br.reactjs.org/)
 - [TypeScript v4.6.4](https://www.typescriptlang.org/)
@@ -60,35 +59,27 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 --------------------------------------------------------------------------------------
 
-<h3 id="instalando">:computer: Instalando o Projeto</h3>
-
-<h4 id="rodando">Rodando o Projeto</h4>
-
-<h4 id="rodando-windows">
-	<strong>Windows</strong>
-</h4>
+<h3 id="instalando">:computer: Project Installation</h3>
 
 <h4>
-	<strong>Instalando Depêndencias</strong>
+	<strong>Installing Dependencies</strong>
 </h4>
 
-> **Observação:** O sistema de empacotamento utilizado foi o ( Yarn ), então é importante usa-lo para que evite dores de cabeça.
-
 ```
-yarn install
+yarn install or npm install
 ```
 
 <h4>
-	<strong>Rodando</strong>
+	<strong>Running</strong>
 </h4>
 
 ```
-yarn dev
+yarn dev or npm dev
 ```
 
 --------------------------------------------------------------------------------------
 
-<h3 id="autor">:bust_in_silhouette: Autor</h3>
+<h3 id="autor">:bust_in_silhouette: Author</h3>
 
 <table>
 	<tr>
@@ -104,11 +95,12 @@ yarn dev
 	</tr>
 </table>
 <br />
-Feito com ❤️ por Lucas Santus!<br />
-Obrigado por visitar e boa codificação!<br />
+
+Made with ❤️ by Lucas Santus!<br />
+Thanks for visiting and good coding!<br />
 
 --------------------------------------------------------------------------------------
 
 <h3 id="license">:memo: License</h3>
 
-Este projeto está licenciado sob a Licença MIT - veja o [LICENSE.md](https://github.com/LucasSantus/vite-react-tailwindcss-components/blob/master/LICENSE) para melhores detalhes.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/LucasSantus/vite-react-tailwindcss-components/blob/master/LICENSE) for better details.
