@@ -7,10 +7,15 @@ export const PathRoutes: FC = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        {routes.map(({ id, path, element, subItem }) => (
-          <Route key={id} path={path} element={element} />
-          // {subItem?.map((item: any) => <></>)}
-        ))}
+        {routes.map(({ id, path, element, subItem }) => {
+          if (subItem) {
+            subItem.map((item) => (
+              <Route key={item.id} path={item.path} element={item.element} />
+            ));
+          } else if (path && element) {
+            return <Route key={id} path={path} element={element} />;
+          }
+        })}
       </Route>
     </Routes>
   );
