@@ -11,9 +11,26 @@ export const Sidebar: FC = () => {
       <div className="overflow-y-auto py-4 px-3">
         <ul className="space-y-2">
           {routes.map(({ id, title, notification, icon, subItem, path }) => {
+            // if (subItem) {
+            //   console.log(subItem);
+            //   subItem.map((item) => (
+            //     <li key={item.id}>
+            //       {item.title && item.icon && item?.path && (
+            //         <Item
+            //           title={item.title}
+            //           icon={item.icon}
+            //           onClick={() => {
+            //             navigate(item.path!);
+            //           }}
+            //         />
+            //       )}
+            //     </li>
+            //   ));
+            // }
+
             return (
               <li key={id}>
-                {title && icon && (
+                {title && icon && path && (
                   <Item
                     title={title}
                     icon={icon}
