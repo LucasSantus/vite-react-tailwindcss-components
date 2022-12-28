@@ -9,12 +9,11 @@ interface IItemProps {
 export const Item: FC<IItemProps> = ({ title, icon, onClick }) => {
   return (
     <a
-      href="#"
       onClick={onClick}
-      className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+      className="flex items-center justify-center w-12 h-12 sm:justify-start sm:w-full px-5 py-2 rounded-lg text-base font-normal transition duration-75 gap-4 dark:text-white dark:bg-gray-700 dark:hover:bg-gray-600 cursor-pointer"
     >
-      {icon}
-      <span className="ml-3">{title}</span>
+      <span className="">{icon}</span>
+      <span className="hidden sm:flex">{title}</span>
     </a>
   );
 };

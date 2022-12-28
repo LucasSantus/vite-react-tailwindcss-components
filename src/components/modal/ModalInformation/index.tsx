@@ -19,12 +19,10 @@ export const ModalInformation: FC<IMountedModalProps> = ({
       description={modal.description}
       isDisabledOnClickModal={modal.isDisabledOnClickModal}
       size={modal.size}
-      tooltip={modal.tooltip}
       button={button}
       active={active}
       setActive={setActive}
     >
-
       {modal?.icon}
 
       <StructureModal title={modal.title} description={modal.description}>
