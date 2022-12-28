@@ -4,6 +4,10 @@ import { PropsWithChildren } from "react";
  * Generic Interfaces
  */
 
+interface ITitle {
+  title: string;
+}
+
 interface IDescription {
   description: string;
 }
@@ -42,31 +46,39 @@ interface IModalContentTypeProps extends IModalAttributeProps {}
 export interface IModalActiveProps
   extends IModalTypeProps,
     IActiveProps,
-    PropsWithChildren, 
+    PropsWithChildren,
     IMainButtonProps {}
 
 /**
  * Modal Header
  */
- export interface IModalHeaderProps {
-  title: string
-}
+export interface IModalHeaderProps extends ITitle {}
 
 /**
  * Modal Alert
  */
-export interface IMountedModalProps extends IButtonModalProps, IMainButtonProps {
+export interface IMountedModalProps
+  extends IButtonModalProps,
+    IMainButtonProps {
   modal: IModalTypeProps;
 }
 
 /**
  * Modal Content
  */
-export interface IModalContentProps extends IButtonModalProps, IMainButtonProps, PropsWithChildren {
-  modal: IModalContentTypeProps
+export interface IModalContentProps
+  extends IButtonModalProps,
+    IMainButtonProps,
+    PropsWithChildren {
+  modal: IModalContentTypeProps;
 }
 
 /**
  * Double Button
  */
 export interface IDoubleButtonProps extends IActiveProps, IButtonModalProps {}
+
+export interface IStructureModalProps
+  extends ITitle,
+    IDescription,
+    PropsWithChildren {}
