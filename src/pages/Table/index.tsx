@@ -5,7 +5,7 @@ import { datas } from "../../mocks/datas";
 export const PageTable: FC = () => {
   return (
     <div className="container w-full">
-      <Table values={datas.slice(0, 10)} />
+      <Table title="Dinamic Table" values={datas.slice(0, 10)} />
     </div>
   );
 };
