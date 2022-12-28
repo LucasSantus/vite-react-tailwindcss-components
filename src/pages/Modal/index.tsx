@@ -1,11 +1,13 @@
 import {
   Article,
   CheckCircle,
+  CodeSimple,
   Info,
   Trash,
   WarningOctagon,
 } from "phosphor-react";
 import { FC, useState } from "react";
+import { Modal } from "../../components/modal";
 import { ModalContent } from "../../components/modal/ModalContent";
 import { ModalInformation } from "../../components/modal/ModalInformation";
 
@@ -17,7 +19,7 @@ export const PageModal: FC = () => {
   };
 
   return (
-    <div>
+    <div className="w-full flex gap-2">
       <ModalInformation
         modal={{
           title: "Are you sure?",
@@ -33,7 +35,7 @@ export const PageModal: FC = () => {
           textColor: "text-light",
         }}
         buttonConfirmModal={{
-          title: "Confirmar",
+          title: "Confirm",
           onClick: () => handleOnClickConfirm,
           backgroundColor: "btn-danger",
           textColor: "text-light",
@@ -55,7 +57,7 @@ export const PageModal: FC = () => {
           textColor: "text-light",
         }}
         buttonConfirmModal={{
-          title: "Confirmar",
+          title: "Confirm",
           onClick: () => handleOnClickConfirm,
           backgroundColor: "btn-info",
           textColor: "text-light",
@@ -76,7 +78,7 @@ export const PageModal: FC = () => {
           textColor: "text-light",
         }}
         buttonConfirmModal={{
-          title: "Confirmar",
+          title: "Confirm",
           onClick: () => handleOnClickConfirm,
           backgroundColor: "btn-success",
           textColor: "text-light",
@@ -97,7 +99,7 @@ export const PageModal: FC = () => {
           textColor: "text-light",
         }}
         buttonConfirmModal={{
-          title: "Confirmar",
+          title: "Confirm",
           onClick: () => handleOnClickConfirm,
           backgroundColor: "btn-warning",
           textColor: "text-light",
@@ -112,7 +114,7 @@ export const PageModal: FC = () => {
           textColor: "text-light",
         }}
         buttonConfirmModal={{
-          title: "Confirmar",
+          title: "Confirm",
           onClick: () => handleOnClickConfirm,
           backgroundColor: "btn-secondary",
           textColor: "text-light",
@@ -130,20 +132,20 @@ export const PageModal: FC = () => {
         voluptas minima odio, fugit fugiat amet itaque accusantium.
       </ModalContent>
 
-      {/* <Modal
-    title="test"
-    description="teste"
-    button={{
-      title: "Simple Modal",
-      icon: <CodeSimple size={18} className="text-light" />,
-      backgroundColor: "btn-dark",
-      textColor: "text-light",
-    }}
-    active={active}
-    setActive={setActive}
-  >
-    modal vazio
-  </Modal> */}
+      <Modal
+        title="test"
+        description="teste"
+        button={{
+          title: "Simple Modal",
+          icon: <CodeSimple size={18} className="text-light" />,
+          backgroundColor: "btn-dark",
+          textColor: "text-light",
+        }}
+        active={active}
+        setActive={setActive}
+      >
+        modal vazio
+      </Modal>
     </div>
   );
 };
