@@ -1,14 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-
-interface IItemsType {
-  title: string;
-  onClick: () => void;
-}
-
-interface IDropdownProps extends PropsWithChildren {
-  isActive: boolean;
-  items: IItemsType[];
-}
+import { IDropdownProps } from "./types/types";
 
 export const Dropdown: FC<IDropdownProps> = ({ children, isActive, items }) => {
   return (

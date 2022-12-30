@@ -1,10 +1,6 @@
 import { MagnifyingGlass } from "phosphor-react";
 import { FC, useState } from "react";
-
-interface ITableProps {
-  title: string;
-  values: any[];
-}
+import { ITableProps } from "./types/types";
 
 export const Table: FC<ITableProps> = ({ title, values }) => {
   const keys = values.length > 0 ? Object.keys(values[0]) : [];

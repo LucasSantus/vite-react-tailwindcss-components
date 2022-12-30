@@ -1,15 +1,6 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
-
-interface IBreadTypes {
-  title: string;
-  path: string;
-}
-
-interface IBreadcrumbProps {
-  breads: IBreadTypes[];
-  simbol?: string;
-}
+import { IBreadcrumbProps } from "./types/types";
 
 export const Breadcrumbs: FC<IBreadcrumbProps> = ({ breads, simbol = "/" }) => {
   const navigate = useNavigate();

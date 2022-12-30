@@ -7,6 +7,7 @@ import {
 } from "phosphor-react";
 import { ReactNode } from "react";
 import { PageBreadcrumb } from "../pages/Breadcrumb";
+import { PageCollapse } from "../pages/Collapse";
 import { Dashboard } from "../pages/Dashboard";
 import { PageModal } from "../pages/Modal";
 import { NotFound } from "../pages/NotFound";
@@ -37,24 +38,31 @@ export const routes: IRoutesType[] = [
   },
   {
     id: 3,
-    title: "Modals",
+    title: "Modal",
     icon: <House size={20} />,
     path: "/modal",
     element: <PageModal />,
   },
   {
     id: 4,
-    title: "Tables",
+    title: "Table",
     icon: <House size={20} />,
     path: "/table",
     element: <PageTable />,
   },
   {
     id: 5,
-    title: "Breadcrumbs",
+    title: "Breadcrumb",
     icon: <House size={20} />,
-    path: "/breadcrumbs",
+    path: "/breadcrumb",
     element: <PageBreadcrumb />,
+  },
+  {
+    id: 6,
+    title: "Collapse",
+    icon: <House size={20} />,
+    path: "/collapse",
+    element: <PageCollapse />,
   },
   // {
   //   id: 10,
